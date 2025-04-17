@@ -34,7 +34,7 @@ export default function SideNav() {
                   className="h-10 w-10"
                 />
               </Link>
-              <Link href="https://orcid.org/orcid=0009-0006-6803-6108" target="_blank">
+              <Link href="https://orcid.org/0009-0006-6803-6108" target="_blank">
                 <Image
                   src="/icons/orcid.png"
                   alt="ORCID"
