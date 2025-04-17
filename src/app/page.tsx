@@ -3,9 +3,9 @@ export default function HomePage() {
     <div>
       <h1 className="text-2xl font-bold"> 🌱 About Me</h1>
       <p>
-      From as far back as I can remember, my path has been shaped by a deep-rooted curiosity and a relentless pursuit to solve problems. While my professional journey is varied, spanning automotive, startups, and academia, the common thread is my commitment to creating meaningful solutions that bring value to people. For me, it is about rolling up my sleeves, diving deep into a challenge and coming up with something impactful on the other end. The technology I use or the accolades I receive are a side effect and not the objective.
-      <br /><br />
-      Every challenge I tackle is an opportunity to learn and grow, adding new tools to my toolkit. Whether it's a new technology, a novel methodology, or an efficient process. When faced with a new problem, I carefully select the best tool to solve the problem. I'm not an "expert" in any domain, but I believe that's my strength. Being a 'jack of all trades' means I bring a unique, cross-disciplinary perspective to the table, allowing me to connect dots others might miss.
+        From as far back as I can remember, my path has been shaped by a deep-rooted curiosity and a relentless pursuit to solve problems. While my professional journey is varied, spanning automotive, startups, and academia, the common thread is my commitment to creating meaningful solutions that bring value to people. For me, it is about rolling up my sleeves, diving deep into a challenge and coming up with something impactful on the other end. The technology I use or the accolades I receive are a side effect and not the objective.
+        <br /><br />
+        Every challenge I tackle is an opportunity to learn and grow, adding new tools to my toolkit. Whether it&apos;s a new technology, a novel methodology, or an efficient process. When faced with a new problem, I carefully select the best tool to solve the problem. I&apos;m not an &quot;expert&quot; in any domain, but I believe that&apos;s my strength. Being a &apos;jack of all trades&apos; means I bring a unique, cross-disciplinary perspective to the table, allowing me to connect dots others might miss.
       </p>
 
       <h1 className="text-2xl font-bold mt-6"> 🛠 Skills and Expertise</h1>
@@ -31,7 +31,7 @@ export default function HomePage() {
       <ul>
         <li><strong>BrisHacks Hackathon 2024 Winner</strong>: To tackle childhood obesity, we created a video game that requires players to engage in physical activities to control the character on screen.</li>
         <li><strong>Robotic + Care Hackathon 2023 Winner</strong>: Developed a social care robot to aid in healthcare settings.</li>
-        <li><strong>Progressable</strong>: A cross-platform exercise journal application developed using Flutter. Download it at <a href="https://www.progressable.co.uk" target="_blank">www.progressable.co.uk</a>.</li>
+        <li><strong>Progressable</strong>: A cross-platform exercise journal application developed using Flutter. Download it at <a href="https://www.progressable.co.uk" target="_blank" rel="noopener noreferrer">www.progressable.co.uk</a>.</li>
       </ul>
 
       <h1 className="text-2xl font-bold mt-6"> 🎨 Hobbies and Interests</h1>
