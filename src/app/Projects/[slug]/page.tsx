@@ -8,9 +8,10 @@ import html from 'remark-html';
 export default async function Page({
   params,
 }: {
-  params: { slug: string };
+  params: Promise<{ slug: string }>
 }) {
-  const filePath = path.join(process.cwd(), 'content', 'projects', `${params.slug}.md`);
+  const { slug } = await params
+  const filePath = path.join(process.cwd(), 'content', 'projects', `${slug}.md`);
   if (!fs.existsSync(filePath)) {
     return notFound();
   }
