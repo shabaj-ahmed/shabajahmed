@@ -29,15 +29,17 @@ export default function ProjectsPage() {
           <Link
             key={project.slug}
             href={`/projects/${project.slug}`}
-            className="border rounded-lg hover:shadow-md overflow-hidden transition"
-          >
-            <Image
-              src={project.image}
-              alt={project.title}
-              width={600}
-              height={400}
-              className="w-full h-48 object-cover"
-            />
+            className="group border rounded-lg overflow-hidden transform transition duration-200 hover:shadow-2xl hover:scale-[1.02]"
+            >
+            <div className="aspect-[3/2] w-full relative">
+              <Image
+                src={project.image}
+                alt={project.title}
+                fill
+                className="object-cover rounded-t-lg"
+                sizes="(max-width: 768px) 100vw, 50vw"
+              />
+            </div>
             <div className="p-4">
               <h2 className="text-xl font-semibold mb-1">{project.title}</h2>
               <p className="text-sm text-gray-500 mb-1">{project.date}</p>
