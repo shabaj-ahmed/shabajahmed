@@ -31,7 +31,7 @@ export default async function Page({
 }
 
 export async function generateStaticParams() {
-  const files = fs.readdirSync(path.join(process.cwd(), 'Projects'));
+  const files = fs.readdirSync(path.join(process.cwd(), 'content', 'projects'));
   const slugs = files.map((file) => ({
     slug: file.replace(/\.md$/, ''),
   }));
