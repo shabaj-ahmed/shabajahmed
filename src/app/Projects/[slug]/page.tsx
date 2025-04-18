@@ -10,9 +10,7 @@ export default async function Page({
 }: {
   params: { slug: string };
 }) {
-  const { slug } = await params
-
-  const filePath = path.join(process.cwd(), 'content', 'projects', `${slug}.md`);
+  const filePath = path.join(process.cwd(), 'content', 'projects', `${params.slug}.md`);
   if (!fs.existsSync(filePath)) {
     return notFound();
   }
