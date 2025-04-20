@@ -5,7 +5,7 @@ import SocialLinks from './social-links';
 
 export default function SideNav() {
   return (
-    <div className="flex h-full flex-col px-3 py-4 md:px-2">
+    <div className="flex h-full flex-col overflow-y-auto px-3 py-4 md:px-2">
       <div
       className="mb-2 flex items-center justify-center rounded-md bg-indigo-950 p-2 h-[12rem] md:h-[18rem]"
       >
