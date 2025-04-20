@@ -1,6 +1,7 @@
 import './ui/globals.css';
 import { inter } from './ui/fonts';
 import SideNav from './ui/sidenav';
+import SocialLinks from './ui/social-links';
 
 export default function RootLayout({
   children,
@@ -16,6 +17,9 @@ export default function RootLayout({
           </div>
           <div className="flex-grow p-6 md:overflow-y-auto md:p-12">
             {children}
+            <div className="block md:hidden mt-8">
+              <SocialLinks />
+            </div>
           </div>
         </div>
       </body>
