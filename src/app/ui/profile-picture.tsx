@@ -6,9 +6,9 @@ export default function ProfilePicture() {
   return (
     <div className="flex items-center justify-center w-full flex-col">
       <Image
-        src="/profile_picture.png" // Put your profile pic in `public/images`
+        src="/profile_picture.jpg"
         alt="My Profile Picture"
-        width={100} // These are max dimensions
+        width={100}
         height={100}
         className="
           rounded-full object-cover
