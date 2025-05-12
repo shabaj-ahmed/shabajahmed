@@ -1,8 +1,8 @@
-import fs from 'fs';
-import path from 'path';
-import matter from 'gray-matter';
-import Link from 'next/link';
-import Image from 'next/image';
+import fs from "fs";
+import path from "path";
+import matter from "gray-matter";
+import Link from "next/link";
+import Image from "next/image";
 
 export default function ProjectsPage() {
   return (
@@ -10,10 +10,35 @@ export default function ProjectsPage() {
       <h1 className="text-3xl font-bold mb-6">Projects</h1>
       <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
         <Link
-          key={'balancing-robot'}
-          href={`/projects/balancing-robot`}
+          key={"SAR-for-habit-formation"}
+          href={`/Projects/SAR-for-habit-formation`}
           className="group border rounded-lg overflow-hidden transform transition duration-200 hover:shadow-2xl hover:scale-[1.02]"
-          >
+        >
+          <div className="aspect-[3/2] w-full relative">
+            <Image
+              src="/projects/SAR-for-habit-formation/SAR-for-habit-formation.jpg"
+              alt="Socially Assistive Robot for Habit Formation"
+              fill
+              className="object-cover rounded-t-lg"
+              sizes="(max-width: 768px) 100vw, 50vw"
+            />
+          </div>
+          <div className="p-4">
+            <h2 className="text-xl font-semibold mb-1">
+              Socially Assistive Robot for Habit Formation
+            </h2>
+            <p className="text-sm text-gray-500 mb-1">2023-10-01</p>
+            <p className="text-sm text-gray-700">
+              This project focuses on using socially assistive robots to support
+              habit formation in health and wellbeing.
+            </p>
+          </div>
+        </Link>
+        <Link
+          key={"balancing-robot"}
+          href={`/Projects/balancing-robot`}
+          className="group border rounded-lg overflow-hidden transform transition duration-200 hover:shadow-2xl hover:scale-[1.02]"
+        >
           <div className="aspect-[3/2] w-full relative">
             <Image
               src="/projects/two_wheel_balancing_robot.jpg"
@@ -24,9 +49,14 @@ export default function ProjectsPage() {
             />
           </div>
           <div className="p-4">
-            <h2 className="text-xl font-semibold mb-1">Two Wheel Self-Balancing Robo</h2>
+            <h2 className="text-xl font-semibold mb-1">
+              Two Wheel Self-Balancing Robo
+            </h2>
             <p className="text-sm text-gray-500 mb-1">2019-08-14</p>
-            <p className="text-sm text-gray-700">This instructable will go through the design and build process for a self-balancing robot.</p>
+            <p className="text-sm text-gray-700">
+              This instructable will go through the design and build process for
+              a self-balancing robot.
+            </p>
           </div>
         </Link>
       </div>
