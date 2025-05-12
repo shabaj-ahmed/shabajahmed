@@ -583,6 +583,28 @@ export default function BalancingRobotPage() {
         system operated from a single USB-C 5A power supply.
       </p>
 
+      <h2 className="text-3xl font-semibold mb-4 mt-10">Conclusion</h2>
+      <p className="mb-4 text-gray-800">
+        This project explored how a socially assistive robot (SAR) could support healthy habit formation through daily interactions in a real-world, in-home setting. Over a three-week period, participants engaged with either a robot-assisted or screen-only system designed to promote physical activity via structured reminders and self-reflective check-ins.
+      </p>
+      <p className="mb-4 text-gray-800">
+        The findings revealed that <strong>embodiment matters</strong>: participants in the robot-assisted condition reported stronger emotional engagement, greater perceived companionship, and a heightened sense of accountability. These relational effects translated into improved motivation and enjoyment compared to the screen-only group. However, both systems helped users reflect on their behaviours — highlighting the potential of structured, conversational coaching, even without embodiment.
+      </p>
+      <p className="mb-4 text-gray-800">
+        At the same time, the study identified critical limitations. Technical issues like voice recognition errors and system instability negatively impacted user trust and long-term engagement. Participants also expressed a desire for more adaptive, personalised dialogue and greater flexibility in how reminders were delivered.
+      </p>
+      <p className="mb-4 text-gray-800">
+        In response, this project contributed <strong>three new design requirements</strong> to guide future development:
+      </p>
+      <ul className="mb-4 pl-5 list-disc marker:text-gray-500 space-y-1 pl-6">
+        <li><strong>Conversational memory</strong> to support more adaptive, human-like interactions.</li>
+        <li><strong>Context-aware reminder systems</strong> that can operate across platforms.</li>
+        <li><strong>Robust error recovery mechanisms</strong> to maintain user trust during long-term use.</li>
+      </ul>
+      <p className="mb-4 text-gray-800">
+        Overall, this research demonstrates the promise of SARs in promoting healthy behaviour change — but also underscores the need for reliable systems and thoughtful interaction design. By combining embodiment with adaptive, user-centred features, future socially assistive robots can become powerful allies in supporting long-term health and well-being.
+      </p>
+
       <div className="mt-10 border-t pt-6 text-center">
         <p className="mb-2 text-lg text-gray-700 font-semibold">
           Explore the Full Project
