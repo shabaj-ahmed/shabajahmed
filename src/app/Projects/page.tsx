@@ -10,6 +10,31 @@ export default function ProjectsPage() {
       <h1 className="text-3xl font-bold mb-6">Projects</h1>
       <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
         <Link
+          key={"photo-album"}
+          href={`/Projects/photo-album`}
+          className="group border rounded-lg overflow-hidden transform transition duration-200 hover:shadow-2xl hover:scale-[1.02]"
+        >
+          <div className="aspect-[3/2] w-full relative">
+            <Image
+              src="/projects/photo-album/photo-album.jpg"
+              alt="Photo Album Application"
+              fill
+              className="object-cover rounded-t-lg"
+              sizes="(max-width: 768px) 100vw, 50vw"
+            />
+          </div>
+          <div className="p-4">
+            <h2 className="text-xl font-semibold mb-1">
+              Photo Album Application
+            </h2>
+            <p className="text-sm text-gray-500 mb-1">2025-05-14</p>
+            <p className="text-sm text-gray-700">
+              A lightweight desktop application for tagging and retrieving
+              personal photos.
+            </p>
+          </div>
+        </Link>
+        <Link
           key={"SAR-for-habit-formation"}
           href={`/Projects/SAR-for-habit-formation`}
           className="group border rounded-lg overflow-hidden transform transition duration-200 hover:shadow-2xl hover:scale-[1.02]"
