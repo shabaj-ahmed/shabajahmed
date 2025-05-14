@@ -21,11 +21,11 @@ const links = [
     href: '/Projects',
     icon: DocumentDuplicateIcon,
   },
-  {
-    name: 'Posts',
-    href: '/Posts',
-    icon: InboxIcon
-  },
+  // {
+  //   name: 'Posts',
+  //   href: '/Posts',
+  //   icon: InboxIcon
+  // },
   { name: 'Experience',
     href: '/Experience',
     icon: IdentificationIcon
