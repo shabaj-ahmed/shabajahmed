@@ -60,6 +60,31 @@ export default function ProjectsPage() {
           </div>
         </Link>
         <Link
+          key={"progressable"}
+          href={`/Projects/progressable`}
+          className="group border rounded-lg overflow-hidden transform transition duration-200 hover:shadow-2xl hover:scale-[1.02]"
+        >
+          <div className="aspect-[3/2] w-full relative">
+            <Image
+              src="/projects/progressable/logo.jpg"
+              alt="Two Wheel Self-Balancing Robot"
+              fill
+              className="object-cover rounded-t-lg"
+              sizes="(max-width: 768px) 100vw, 50vw"
+            />
+          </div>
+          <div className="p-4">
+            <h2 className="text-xl font-semibold mb-1">
+              Progressable: A Exercise Journaling App
+            </h2>
+            <p className="text-sm text-gray-500 mb-1">2023-01-24</p>
+            <p className="text-sm text-gray-700">
+              Progressable is a exercise journaling app that allows users to
+              monitor their workout performance to ensure consistent progress.
+            </p>
+          </div>
+        </Link>
+        <Link
           key={"balancing-robot"}
           href={`/Projects/balancing-robot`}
           className="group border rounded-lg overflow-hidden transform transition duration-200 hover:shadow-2xl hover:scale-[1.02]"
