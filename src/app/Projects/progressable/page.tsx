@@ -16,14 +16,30 @@ export default function Progressable() {
       <p className="text-sm text-gray-500 mb-8">2023-01-24</p>
 
       <p className="mb-4 text-gray-800">
-        Progressable was developed as a submission for start up pitching
-        competitions and later was launched as a mobile application on the App
-        store and Google Play Store. The app is designed to help athletes track
-        their workouts and progress over time, providing a platform for exercise
-        journaling and goal setting. The app as subsequently been removed from
-        the app store and play store as it was not a viable product. The project
-        was developed using Flutter and Firebase, and the original code is
-        available on GitHub.
+        Progressable was originally developed for startup pitch competitions and
+        later launched as a mobile application on both the App Store and Google
+        Play. Designed specifically for athletes, the app supported exercise
+        journaling, workout tracking, and goal setting to help users monitor
+        progress over time.
+      </p>
+      <p className="mb-4 text-gray-800">
+        The app remained live for almost three years before being removed in
+        February 2025 due to limited market viability, the project remains a
+        strong example of full-cycle product development, from concept and
+        design to deployment and user testing. Built using{" "}
+        <strong>Flutter</strong> and <strong>Firebase</strong>, the codebase is
+        available on{" "}
+        <a
+          href="https://github.com/shabaj-ahmed/progressable"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-blue-600 underline hover:text-blue-800"
+        >
+          GitHub
+        </a>
+        . Below is the original business plan submitted as part of the startup
+        competition, outlining Progressable&apos;s value proposition, target
+        market, and go-to-market strategy.
       </p>
 
       <div className="mt-10 border-t pt-6 text-center">
@@ -463,12 +479,12 @@ export default function Progressable() {
       </h2>
       <p className="mb-4 text-gray-800">
         Over the next year, our primary focus will be to deeply understand our
-        users&rsquo; needs and refine our app&apos;s functionality to serve them better. We
-        aim to conduct comprehensive market research and gather feedback from at
-        least 100 current users, supplemented by in-depth interviews with 50
-        users and personal trainers. This approach will ensure we&apos;re not just
-        guessing but are precisely tailoring our app based on direct user
-        insights.
+        users&rsquo; needs and refine our app&apos;s functionality to serve them
+        better. We aim to conduct comprehensive market research and gather
+        feedback from at least 100 current users, supplemented by in-depth
+        interviews with 50 users and personal trainers. This approach will
+        ensure we&apos;re not just guessing but are precisely tailoring our app
+        based on direct user insights.
       </p>
       <p className="mb-4 text-gray-800">
         This feedback will guide the integration of biometric data collection
@@ -491,9 +507,9 @@ export default function Progressable() {
         attributed to this new feature. The personal trainers/coaches will be
         recruited through targeted outreach within the fitness industry,
         ensuring we bring on board professionals who are as dedicated to our
-        users&rsquo; fitness goals as we are. The launch of this coaching platform
-        signifies our commitment to tracking fitness and actively contributing
-        to our users&rsquo; progress.
+        users&rsquo; fitness goals as we are. The launch of this coaching
+        platform signifies our commitment to tracking fitness and actively
+        contributing to our users&rsquo; progress.
       </p>
       <h2 className="text-2xl font-semibold mb-3 mt-8">
         Long-term Goals (Next 36 Months)
@@ -643,12 +659,12 @@ export default function Progressable() {
           of the app £12.99
         </li>
         <li className="ml-0">
-          Monthly auto&ndash;renewable subscriptions remove ads and all the limits
-          across the application £9.99
+          Monthly auto&ndash;renewable subscriptions remove ads and all the
+          limits across the application £9.99
         </li>
         <li className="ml-0">
-          Annual auto&ndash;renewable subscriptions remove ads and all the limits
-          across the application £99.99
+          Annual auto&ndash;renewable subscriptions remove ads and all the
+          limits across the application £99.99
         </li>
       </ol>
       <h3 className="text-xl font-semibold mb-3 mt-8">Financial Forecast</h3>
@@ -659,9 +675,9 @@ export default function Progressable() {
         curve, with the majority of growth taking place in years 4 and 5. We
         have confidence in the unique value proposition of Progressable and the
         increasing demand for specialised fitness tools. We believe that we can
-        capture the 805,000 customers we are targeting. A detailed breakdown of the
-        financial forecast is provided in Table 2 with a break even analysis provided in
-        Figure 2.
+        capture the 805,000 customers we are targeting. A detailed breakdown of
+        the financial forecast is provided in Table 2 with a break even analysis
+        provided in Figure 2.
       </p>
       <h3 className="text-xl font-semibold mb-3 mt-8">Financial Strategy</h3>
       <p className="mb-4 text-gray-800">
@@ -815,7 +831,8 @@ export default function Progressable() {
         />
       </div>
       <p className="text-sm text-gray-500 text-center">
-      Figure 2 Break-even analysis showing that Progressable will break even in August of year three (~31 months)
+        Figure 2 Break-even analysis showing that Progressable will break even
+        in August of year three (~31 months)
       </p>
     </div>
   );
