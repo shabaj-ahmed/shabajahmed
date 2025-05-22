@@ -5,17 +5,17 @@ export default function HomePage() {
       <section className="p-6 bg-white rounded-md shadow-md">
         <h1 className="text-2xl font-bold mb-4">🌱 About Me</h1>
         <p>
-         I&apos;m a robotics researcher and technologist with a deep curiosity for how we can use machines to solve meaningful human problems, especially in the areas of health and wellbeing. My journey has taken me through automotive engineering, tech startups, and academia, but the common thread is always the same: using technology to improve people&apos;s lives.
+         I&apos;m a robotics researcher with a deep curiosity for how we can use machines to solve meaningful human problems, especially in the areas of health and wellbeing. My journey has taken me through automotive engineering, tech startups, and academia, but the common thread is always the same: using technology to improve people&apos;s lives.
         </p>
         <p className="mt-4">
-         I approach problems from a human-centered perspective, blending technical rigor with creative thinking. Whether I&apos;m developing embedded systems or designing user-focused robotic interactions, I believe in using the right tools for the job and learning new ones when needed. I&apos;m not attached to being an &quot;expert&quot;; instead, I bring a cross-disciplinary mindset that helps me connect ideas across domains and see patterns others might miss.
+         I approach problems from a human-centered perspective. Whether I&apos;m developing embedded systems or designing user-focused robotic interactions, I believe in using the right tools for the job and learning new ones when needed. I bring a cross-disciplinary mindset that helps me connect ideas across domains and see patterns others might miss.
         </p>
       </section>
 
       <section className="p-6 bg-white rounded-md shadow-md">
         <h1 className="text-2xl font-bold mb-4">⚙️ Current Work and Interests</h1>
           <p>
-            <strong>PhD candidate (Submitted and awaiting Viva):</strong> My PhD research focuses on human-robot interaction, exploring how socially assistive robotics can support healthy habit formation. I design and evaluate robot-led interventions that encourage behaviour change, drawing from behavior science, robotics, and health technology.
+            <strong>PhD candidate (Preparing for Viva):</strong> My PhD research focuses on human-robot interaction, exploring how socially assistive robotics can support healthy habit formation. I design and evaluate robot-led interventions that encourage behaviour change, drawing from behavior science, robotics, and health technology.
           </p>
       </section>
 
@@ -23,17 +23,17 @@ export default function HomePage() {
         <h1 className="text-2xl font-bold mb-4">🛠 Skills and Expertise</h1>
         <ul className="list-disc list-inside space-y-2">
           <li><strong>Programming Languages:</strong> Python, C/C++, Dart, JavaScript, MATLAB, HTML, CSS, SQL, R</li>
-          <li><strong>Frameworks & Tools:</strong> Flutter, Firebase, MQTT, Node.js, Git, GitHub, SourceTree, RTOS (basic), ROS (basic), TensorFlow (introductory), OpenCV</li>
+          <li><strong>Frameworks & Tools:</strong> Flutter, Firebase, MQTT, Node.js, Git, SourceTree, ROS RTOS, PyTorch, TensorFlow, OpenCV</li>
           <li><strong>Embedded & Hardware:</strong> LabVIEW, microcontrollers, microprocessors, IoT, sensor integration</li>
           <li><strong>System Design & Engineering:</strong> Model-Based Systems Engineering (MBSE), SysML, IBM Rhapsody, DOORS</li>
-          <li><strong>Design & Prototyping:</strong> Figma, CAD (SolidWorks/Fusion 360), 3D Printing</li>
+          <li><strong>Design & Prototyping:</strong> CAD (SolidWorks/Fusion 360), 3D Printing</li>
         </ul>
       </section>
 
       <section className="p-6 bg-white rounded-md shadow-md">
         <h1 className="text-2xl font-bold mb-4">💼 Professional Highlights</h1>
         <ul className="list-disc list-inside space-y-1">
-          <li><strong>PhD Research at Bristol University:</strong> Developed socially assistive robots for health behavior change using human-robot interaction methods and long-term field studies.</li>
+          <li><strong>PhD Research at Bristol University:</strong> Deployed socially assistive robots for health behavior change in a naturalistic environment over a three week study.</li>
           <li><strong>Co-founder at 3D Farms:</strong> Led the development of an autonomous aeroponics system using embedded controllers and real-time nutrient regulation.</li>
           <li><strong>ADAS System Architect at Jaguar Land Rover:</strong> Designed and integrated advanced driver assistance systems using model-based systems engineering.</li>
         </ul>
@@ -42,13 +42,13 @@ export default function HomePage() {
       <section className="p-6 bg-white rounded-md shadow-md">
         <h1 className="text-2xl font-bold mb-4">🎨 Hobbies and Interests</h1>
         <p>
-          Outside of work, I like to explore interests that blend creativity, hands-on experimentation, and personal growth.
+          Outside of work, I like to explore interests that blend creativity, experimentation, and personal growth.
         </p>
         <p className="mt-4">
           <strong>DIY & Mechatronics:</strong> I enjoy tinkering with electronics, making custom tools, and solving everyday problems with technology, building things has always been a creative outlet for me.
         </p>
         <p className="mt-4">
-          <strong>Hackathons:</strong> I regularly take part in hackathons focused on coding, healthcare, and robotics. These events are a chance to push boundaries, learn new tools and technologies, and collaborate with like-minded people, especially in areas that promote health, wellbeing, and accessibility.
+          <strong>Hackathons:</strong> I regularly take part in hackathons focused around health, and robotics. These events are a chance to push boundaries, learn new tools and technologies, and collaborate with like-minded people, especially in areas that promote health, wellbeing, and accessibility.
         </p>
       </section>
 
