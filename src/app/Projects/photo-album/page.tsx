@@ -12,8 +12,8 @@ export default function PhotoAlbumPage() {
         retrieving these memories has become increasingly difficult. When I want
         to find a photo of a specific person, event, or location, I have no
         reliable way to search by these criteria. As a result, many meaningful
-        moments are becoming harder to revisit simply because I can&apos;t locate the
-        images when I want them.
+        moments are becoming harder to revisit simply because I can&apos;t
+        locate the images when I want them.
       </p>
       <p className="mb-4 text-gray-800">
         This project set out to solve that problem by creating a lightweight
@@ -159,9 +159,7 @@ export default function PhotoAlbumPage() {
         </li>
       </ul>
 
-      <h4 className="text-xl font-semibold mb-3">
-        3. Search and Filtering
-      </h4>
+      <h4 className="text-xl font-semibold mb-3">3. Search and Filtering</h4>
       <ul className="mb-4 pl-5 list-disc marker:text-gray-500 space-y-1 pl-6">
         <li>
           <strong>FR3.1</strong> The system shall support filtering images by
@@ -280,9 +278,7 @@ export default function PhotoAlbumPage() {
         </li>
       </ul>
 
-      <h4 className="text-xl font-semibold mb-3">
-        5. Privacy and Security
-      </h4>
+      <h4 className="text-xl font-semibold mb-3">5. Privacy and Security</h4>
       <ul className="mb-4 pl-5 list-disc marker:text-gray-500 space-y-1 pl-6">
         <li>
           <strong>NFR9</strong>: The system shall not require or initiate any
@@ -298,11 +294,7 @@ export default function PhotoAlbumPage() {
           require user confirmation before being executed.
         </li>
       </ul>
-      <h2
-        className="text-3xl font-semibold mb-4 mt-10"
-      >
-        Design Decisions
-      </h2>
+      <h2 className="text-3xl font-semibold mb-4 mt-10">Design Decisions</h2>
       <p className="mb-4 text-gray-800">
         Initially, I planned to use ExifTool to edit metadata embedded directly
         within image files. While ExifTool works well for JPEGs and some other
@@ -315,9 +307,7 @@ export default function PhotoAlbumPage() {
         storing custom, searchable metadata in a separate database. This
         approach offers several advantages:
       </p>
-      <ul
-        className="mb-4 pl-5 list-disc marker:text-gray-500 space-y-1 pl-6"
-      >
+      <ul className="mb-4 pl-5 list-disc marker:text-gray-500 space-y-1 pl-6">
         <li>
           <strong>Format Independence</strong>: Unlike embedded metadata, the
           database solution works uniformly across all image formats, ensuring
@@ -348,9 +338,7 @@ export default function PhotoAlbumPage() {
         convenience.
       </p>
 
-      <h3
-        className="text-2xl font-semibold mb-3 mt-8"
-      >
+      <h3 className="text-2xl font-semibold mb-3 mt-8">
         Performance Considerations
       </h3>
       <p className="mb-4 text-gray-800">
@@ -371,19 +359,10 @@ export default function PhotoAlbumPage() {
         ease of use over scalability or cloud-based features.
       </p>
 
-      <h2
-        className="text-3xl font-semibold mb-4 mt-10"
-      >
-        Technology
-      </h2>
-      <h3
-        className="text-2xl font-semibold mb-3 mt-8"
-      >
+      <h2 className="text-3xl font-semibold mb-4 mt-10">
         Python Libraries and Tools
-      </h3>
-      <ul
-        className="mb-4 pl-5 list-disc marker:text-gray-500 space-y-1 pl-6"
-      >
+      </h2>
+      <ul className="mb-4 pl-5 list-disc marker:text-gray-500 space-y-1 pl-6">
         <li>
           <strong>PyQt6</strong> &ndash; for building the GUI.
         </li>
@@ -393,27 +372,140 @@ export default function PhotoAlbumPage() {
         </li>
       </ul>
 
-      <h2 className="text-3xl font-semibold mb-4 mt-10">Architecture Notes</h2>
+      <h2 className="text-3xl font-semibold mb-4 mt-10">
+        Software Architecture
+      </h2>
       <p className="mb-4 text-gray-800">
-        The photo album application was developed using a simple, modular design that reflects its limited scope and focused purpose: to make photo tagging and filtering straightforward and user-friendly. The system was not intended to be scaled or deployed in complex environments, so the emphasis was placed on clarity, maintainability, and ease of use.
+        This project adopts the <strong>Model-View-Controller (MVC)</strong>{" "}
+        architecture to promote modularity, separation of concerns, and
+        long-term maintainability. The decision to use MVC was driven by the
+        need to clearly separate the user interface logic, business logic, and
+        data access, making the codebase easier to understand and extend.
+      </p>
+
+      <p className="mb-4 text-gray-800">
+        The MVC pattern divides the application into three interconnected
+        components:
       </p>
       <ul className="mb-4 pl-5 list-disc marker:text-gray-500 space-y-1 pl-6">
-        <li><strong>Object-Oriented Programming (OOP)</strong>: Key components—such as image handling, metadata management, and user interface logic—were implemented as classes to improve separation of concerns and facilitate future updates.</li>
-        <li><strong>Single Responsibility Principle</strong>: Functions and classes were generally written to perform a single, clearly defined task, which helps keep the code understandable and easier to debug.</li>
-        <li><strong>Minimal External Dependencies</strong>: Core functionality is implemented using standard Python libraries and PyQt6, making the application lightweight, portable, and easy to set up locally.</li>
-        <li><strong>Readability Over Optimisation</strong>: Code was written with an emphasis on readability rather than performance or scalability, in line with the project’s aim to be easy to maintain and adapt by others.</li>
+        <li>
+          <strong>Model</strong>: Handles all interactions with the SQLite
+          database, including reading and writing image metadata and performing
+          filtered queries.
+        </li>
+        <li>
+          <strong>View</strong>: Responsible for rendering the user interface
+          and presenting data to the user. It reacts to updates from the
+          controller but contains no business logic or direct data access code.
+        </li>
+        <li>
+          <strong>Controller</strong>: Serves as the intermediary between the
+          view and the model. It processes user input, applies business logic,
+          and updates either the model or the view as needed.
+        </li>
+      </ul>
+
+      <h3 className="text-2xl font-semibold mb-3 mt-8">File Structure</h3>
+      <p className="mb-4 text-gray-800">
+        The codebase is structured around these components to support the MVC
+        architecture:
+      </p>
+      <ul className="mb-4 pl-5 list-disc marker:text-gray-500 space-y-2 pl-6">
+        <li>
+          <strong>Model</strong>
+          <ul className="list-disc pl-6 marker:text-gray-400 space-y-1">
+            <li>
+              <code>database_manager.py</code>: Manages all database operations,
+              including CRUD actions and filtered image queries.
+            </li>
+          </ul>
+        </li>
+        <li>
+          <strong>View</strong>
+          <ul className="list-disc pl-6 marker:text-gray-400 space-y-1">
+            <li>
+              <code>main_window.py</code>: Implements the overall UI layout and
+              main interface logic using PyQt6.
+            </li>
+            <li>
+              <code>widgets/</code>: Contains reusable UI components, such as
+              editable dropdowns and custom toast notifications.
+            </li>
+          </ul>
+        </li>
+        <li>
+          <strong>Controller</strong>
+          <ul className="list-disc pl-6 marker:text-gray-400 space-y-1">
+            <li>
+              <code>main_controller.py</code>: Orchestrates the application
+              logic, including loading image folders, updating metadata,
+              applying filters, and handling user interactions.
+            </li>
+          </ul>
+        </li>
+      </ul>
+
+      <p className="mb-4 text-gray-800">
+        Each part of the application has a well-defined role, making the system
+        easier to scale and maintain as new features are introduced.
+      </p>
+
+      <h2 className="text-3xl font-semibold mb-4 mt-10">Architecture Notes</h2>
+      <p className="mb-4 text-gray-800">
+        The photo album application was developed using a simple, modular design
+        that reflects its limited scope and focused purpose: to make photo
+        tagging and filtering straightforward and user-friendly. The system was
+        not intended to be scaled or deployed in complex environments, so the
+        emphasis was placed on clarity, maintainability, and ease of use.
+      </p>
+      <ul className="mb-4 pl-5 list-disc marker:text-gray-500 space-y-1 pl-6">
+        <li>
+          <strong>Object-Oriented Programming (OOP)</strong>: Key
+          components—such as image handling, metadata management, and user
+          interface logic—were implemented as classes to improve separation of
+          concerns and facilitate future updates.
+        </li>
+        <li>
+          <strong>Single Responsibility Principle</strong>: Functions and
+          classes were generally written to perform a single, clearly defined
+          task, which helps keep the code understandable and easier to debug.
+        </li>
+        <li>
+          <strong>Minimal External Dependencies</strong>: Core functionality is
+          implemented using standard Python libraries and PyQt6, making the
+          application lightweight, portable, and easy to set up locally.
+        </li>
+        <li>
+          <strong>Readability Over Optimisation</strong>: Code was written with
+          an emphasis on readability rather than performance or scalability, in
+          line with the project’s aim to be easy to maintain and adapt by
+          others.
+        </li>
       </ul>
       <p className="mb-4 text-gray-800">
-        This pragmatic and lightweight architecture supports the project’s goal as a personal or small-scale photo organiser, while still allowing for modest future improvements or extensions.
+        This pragmatic and lightweight architecture supports the project’s goal
+        as a personal or small-scale photo organiser, while still allowing for
+        modest future improvements or extensions.
       </p>
 
       <h2 className="text-3xl font-semibold mb-4 mt-10">Database Schema</h2>
       <p className="mb-4 text-gray-800">
-        The database schema was chosen to support the structured organisation and retrieval of photos based on associated metadata. The core principles guiding this schema were:
+        The database schema was chosen to support the structured organisation
+        and retrieval of photos based on associated metadata. The core
+        principles guiding this schema were:
       </p>
       <ul className="mb-4 pl-5 list-disc marker:text-gray-500 space-y-1 pl-6">
-        <li><strong>Normalisation</strong> – Similar data like people, groups, and emotions are stored only once in their own tables, and connected to images through link tables. This avoids repeating the same information and keeps everything accurate and consistent.</li>
-        <li><strong>Queryability</strong> – The design supports efficient filtering and searching of images by associated tags, such as person, group, or emotion.</li>
+        <li>
+          <strong>Normalisation</strong> – Similar data like people, groups, and
+          emotions are stored only once in their own tables, and connected to
+          images through link tables. This avoids repeating the same information
+          and keeps everything accurate and consistent.
+        </li>
+        <li>
+          <strong>Queryability</strong> – The design supports efficient
+          filtering and searching of images by associated tags, such as person,
+          group, or emotion.
+        </li>
       </ul>
       <div className="flex justify-center my-6">
         <Image
@@ -425,18 +517,32 @@ export default function PhotoAlbumPage() {
         />
       </div>
       <p className="text-sm italic text-center mb-8">
-        Figure 1: Entity-Relationship Diagram illustrating the relationships between the tables in the database.
+        Figure 1: Entity-Relationship Diagram illustrating the relationships
+        between the tables in the database.
       </p>
       <p className="mb-4 text-gray-800">
-        Figure 1 presents the Entity-Relationship Diagram (ERD), which shows how the schema is structured. The <code>ImageMetadata</code> table, which stores core metadata for each image. It is linked to three tagging entities: <code>Person</code>, <code>GroupTag</code>, and <code>EmotionTag</code>, each of which contains unique tag values.
+        Figure 1 presents the Entity-Relationship Diagram (ERD), which shows how
+        the schema is structured. The <code>ImageMetadata</code> table, which
+        stores core metadata for each image. It is linked to three tagging
+        entities: <code>Person</code>, <code>GroupTag</code>, and{" "}
+        <code>EmotionTag</code>, each of which contains unique tag values.
       </p>
       <p className="mb-4 text-gray-800">
-        To support many-to-many relationships—where each image can be tagged with multiple people, groups, or emotions, the schema includes three join tables: <code>ImagePerson</code>, <code>ImageGroup</code>, and <code>ImageEmotion</code>. Each join table contains foreign keys that reference the primary keys in <code>ImageMetadata</code> and their respective tag tables. This design ensures flexibility and consistency while enabling efficient filtering such as “Show all photos of Shabaj or “Find all images tagged as ‘Happy’.”
+        To support many-to-many relationships—where each image can be tagged
+        with multiple people, groups, or emotions, the schema includes three
+        join tables: <code>ImagePerson</code>, <code>ImageGroup</code>, and{" "}
+        <code>ImageEmotion</code>. Each join table contains foreign keys that
+        reference the primary keys in <code>ImageMetadata</code> and their
+        respective tag tables. This design ensures flexibility and consistency
+        while enabling efficient filtering such as “Show all photos of Shabaj or
+        “Find all images tagged as ‘Happy’.”
       </p>
 
       <h2 className="text-3xl font-semibold mb-4 mt-10">Table Descriptions</h2>
       <h4 className="text-xl font-semibold mb-3 mt-8">ImageMetadata</h4>
-      <p className="mb-2 text-gray-800">Stores one row per image with general metadata.</p>
+      <p className="mb-2 text-gray-800">
+        Stores one row per image with general metadata.
+      </p>
       <div className="overflow-x-auto mb-6">
         <table className="w-full border border-gray-300 text-sm">
           <thead className="bg-gray-100 text-left">
@@ -447,43 +553,50 @@ export default function PhotoAlbumPage() {
             </tr>
           </thead>
           <tbody>
-                      <tr>
-            <td className="border px-3 py-2">id</td>
-            <td className="border px-3 py-2">INTEGER</td>
-            <td className="border px-3 py-2">Primary key</td>
-          </tr>
-          <tr>
-            <td className="border px-3 py-2">filename</td>
-            <td className="border px-3 py-2">TEXT</td>
-            <td className="border px-3 py-2">Unique filename of the image</td>
-          </tr>
-          <tr>
-            <td className="border px-3 py-2">description</td>
-            <td className="border px-3 py-2">TEXT</td>
-            <td className="border px-3 py-2">User-provided description of the image</td>
-          </tr>
-          <tr>
-            <td className="border px-3 py-2">location</td>
-            <td className="border px-3 py-2">TEXT</td>
-            <td className="border px-3 py-2">Location associated with the image</td>
-          </tr>
-          <tr>
-            <td className="border px-3 py-2">date</td>
-            <td className="border px-3 py-2">TEXT</td>
-            <td className="border px-3 py-2">Date of the image (as string)</td>
-          </tr>
-          <tr>
-            <td className="border px-3 py-2">tagged</td>
-            <td className="border px-3 py-2">INTEGER</td>
-            <td className="border px-3 py-2">Boolean flag (1 = tagged, 0 = untagged)</td>
-          </tr>
+            <tr>
+              <td className="border px-3 py-2">id</td>
+              <td className="border px-3 py-2">INTEGER</td>
+              <td className="border px-3 py-2">Primary key</td>
+            </tr>
+            <tr>
+              <td className="border px-3 py-2">filename</td>
+              <td className="border px-3 py-2">TEXT</td>
+              <td className="border px-3 py-2">Unique filename of the image</td>
+            </tr>
+            <tr>
+              <td className="border px-3 py-2">description</td>
+              <td className="border px-3 py-2">TEXT</td>
+              <td className="border px-3 py-2">
+                User-provided description of the image
+              </td>
+            </tr>
+            <tr>
+              <td className="border px-3 py-2">date</td>
+              <td className="border px-3 py-2">TEXT</td>
+              <td className="border px-3 py-2">
+                Date of the image (as string)
+              </td>
+            </tr>
+            <tr>
+              <td className="border px-3 py-2">tagged</td>
+              <td className="border px-3 py-2">INTEGER</td>
+              <td className="border px-3 py-2">
+                Boolean flag (1 = tagged, 0 = untagged)
+              </td>
+            </tr>
+            <tr>
+              <td className="border px-3 py-2">location.id</td>
+              <td className="border px-3 py-2">INTEGER</td>
+              <td className="border px-3 py-2">Foreign key to `Location.id`</td>
+            </tr>
           </tbody>
         </table>
       </div>
-    
 
       <h4 className="text-xl font-semibold mb-3 mt-8">Person</h4>
-      <p className="mb-2 text-gray-800">Stores unique names of individuals who appear in images.</p>
+      <p className="mb-2 text-gray-800">
+        Stores unique names of individuals who appear in images.
+      </p>
       <div className="overflow-x-auto mb-6">
         <table className="w-full border border-gray-300 text-sm">
           <thead className="bg-gray-100 text-left">
@@ -494,23 +607,24 @@ export default function PhotoAlbumPage() {
             </tr>
           </thead>
           <tbody>
-                      <tr>
-            <td className="border px-3 py-2">id</td>
-            <td className="border px-3 py-2">INTEGER</td>
-            <td className="border px-3 py-2">Primary key</td>
-          </tr>
-          <tr>
-            <td className="border px-3 py-2">person_name</td>
-            <td className="border px-3 py-2">TEXT</td>
-            <td className="border px-3 py-2">Unique name of the person</td>
-          </tr>
+            <tr>
+              <td className="border px-3 py-2">id</td>
+              <td className="border px-3 py-2">INTEGER</td>
+              <td className="border px-3 py-2">Primary key</td>
+            </tr>
+            <tr>
+              <td className="border px-3 py-2">person_name</td>
+              <td className="border px-3 py-2">TEXT</td>
+              <td className="border px-3 py-2">Unique name of the person</td>
+            </tr>
           </tbody>
         </table>
       </div>
-    
 
       <h4 className="text-xl font-semibold mb-3 mt-8">ImagePerson</h4>
-      <p className="mb-2 text-gray-800">Join table linking images to people (many-to-many).</p>
+      <p className="mb-2 text-gray-800">
+        Join table linking images to people (many-to-many).
+      </p>
       <div className="overflow-x-auto mb-6">
         <table className="w-full border border-gray-300 text-sm">
           <thead className="bg-gray-100 text-left">
@@ -521,28 +635,33 @@ export default function PhotoAlbumPage() {
             </tr>
           </thead>
           <tbody>
-                      <tr>
-            <td className="border px-3 py-2">image_id</td>
-            <td className="border px-3 py-2">INTEGER</td>
-            <td className="border px-3 py-2">Foreign key to `ImageMetadata.id`</td>
-          </tr>
-          <tr>
-            <td className="border px-3 py-2">person_id</td>
-            <td className="border px-3 py-2">INTEGER</td>
-            <td className="border px-3 py-2">Foreign key to `Person.id`</td>
-          </tr>
-          <tr>
-            <td className="border px-3 py-2"></td>
-            <td className="border px-3 py-2"></td>
-            <td className="border px-3 py-2">Composite primary key (`image_id`, `person_id`)</td>
-          </tr>
+            <tr>
+              <td className="border px-3 py-2">image_id</td>
+              <td className="border px-3 py-2">INTEGER</td>
+              <td className="border px-3 py-2">
+                Foreign key to `ImageMetadata.id`
+              </td>
+            </tr>
+            <tr>
+              <td className="border px-3 py-2">person_id</td>
+              <td className="border px-3 py-2">INTEGER</td>
+              <td className="border px-3 py-2">Foreign key to `Person.id`</td>
+            </tr>
+            <tr>
+              <td className="border px-3 py-2"></td>
+              <td className="border px-3 py-2"></td>
+              <td className="border px-3 py-2">
+                Composite primary key (`image_id`, `person_id`)
+              </td>
+            </tr>
           </tbody>
         </table>
       </div>
-    
 
       <h4 className="text-xl font-semibold mb-3 mt-8">GroupTag</h4>
-      <p className="mb-2 text-gray-800">Stores unique group labels such as “Family” or “Friends”.</p>
+      <p className="mb-2 text-gray-800">
+        Stores unique group labels such as “Family” or “Friends”.
+      </p>
       <div className="overflow-x-auto mb-6">
         <table className="w-full border border-gray-300 text-sm">
           <thead className="bg-gray-100 text-left">
@@ -553,23 +672,24 @@ export default function PhotoAlbumPage() {
             </tr>
           </thead>
           <tbody>
-                      <tr>
-            <td className="border px-3 py-2">id</td>
-            <td className="border px-3 py-2">INTEGER</td>
-            <td className="border px-3 py-2">Primary key</td>
-          </tr>
-          <tr>
-            <td className="border px-3 py-2">group_name</td>
-            <td className="border px-3 py-2">TEXT</td>
-            <td className="border px-3 py-2">Unique group name</td>
-          </tr>
+            <tr>
+              <td className="border px-3 py-2">id</td>
+              <td className="border px-3 py-2">INTEGER</td>
+              <td className="border px-3 py-2">Primary key</td>
+            </tr>
+            <tr>
+              <td className="border px-3 py-2">group_name</td>
+              <td className="border px-3 py-2">TEXT</td>
+              <td className="border px-3 py-2">Unique group name</td>
+            </tr>
           </tbody>
         </table>
       </div>
-    
 
       <h4 className="text-xl font-semibold mb-3 mt-8">ImageGroup</h4>
-      <p className="mb-2 text-gray-800">Join table linking images to groups (many-to-many).</p>
+      <p className="mb-2 text-gray-800">
+        Join table linking images to groups (many-to-many).
+      </p>
       <div className="overflow-x-auto mb-6">
         <table className="w-full border border-gray-300 text-sm">
           <thead className="bg-gray-100 text-left">
@@ -580,28 +700,33 @@ export default function PhotoAlbumPage() {
             </tr>
           </thead>
           <tbody>
-                      <tr>
-            <td className="border px-3 py-2">image_id</td>
-            <td className="border px-3 py-2">INTEGER</td>
-            <td className="border px-3 py-2">Foreign key to `ImageMetadata.id`</td>
-          </tr>
-          <tr>
-            <td className="border px-3 py-2">group_id</td>
-            <td className="border px-3 py-2">INTEGER</td>
-            <td className="border px-3 py-2">Foreign key to `GroupTag.id`</td>
-          </tr>
-          <tr>
-            <td className="border px-3 py-2"></td>
-            <td className="border px-3 py-2"></td>
-            <td className="border px-3 py-2">Composite primary key (`image_id`, `group_id`)</td>
-          </tr>
+            <tr>
+              <td className="border px-3 py-2">image_id</td>
+              <td className="border px-3 py-2">INTEGER</td>
+              <td className="border px-3 py-2">
+                Foreign key to `ImageMetadata.id`
+              </td>
+            </tr>
+            <tr>
+              <td className="border px-3 py-2">group_id</td>
+              <td className="border px-3 py-2">INTEGER</td>
+              <td className="border px-3 py-2">Foreign key to `GroupTag.id`</td>
+            </tr>
+            <tr>
+              <td className="border px-3 py-2"></td>
+              <td className="border px-3 py-2"></td>
+              <td className="border px-3 py-2">
+                Composite primary key (`image_id`, `group_id`)
+              </td>
+            </tr>
           </tbody>
         </table>
       </div>
-    
 
       <h4 className="text-xl font-semibold mb-3 mt-8">EmotionTag</h4>
-      <p className="mb-2 text-gray-800">Stores emotion labels associated with photos, e.g. "Happy", "Nostalgic".</p>
+      <p className="mb-2 text-gray-800">
+        Stores emotion labels associated with photos, e.g. "Happy", "Nostalgic".
+      </p>
       <div className="overflow-x-auto mb-6">
         <table className="w-full border border-gray-300 text-sm">
           <thead className="bg-gray-100 text-left">
@@ -612,23 +737,24 @@ export default function PhotoAlbumPage() {
             </tr>
           </thead>
           <tbody>
-                      <tr>
-            <td className="border px-3 py-2">id</td>
-            <td className="border px-3 py-2">INTEGER</td>
-            <td className="border px-3 py-2">Primary key</td>
-          </tr>
-          <tr>
-            <td className="border px-3 py-2">emotion_name</td>
-            <td className="border px-3 py-2">TEXT</td>
-            <td className="border px-3 py-2">Unique emotion name</td>
-          </tr>
+            <tr>
+              <td className="border px-3 py-2">id</td>
+              <td className="border px-3 py-2">INTEGER</td>
+              <td className="border px-3 py-2">Primary key</td>
+            </tr>
+            <tr>
+              <td className="border px-3 py-2">emotion_name</td>
+              <td className="border px-3 py-2">TEXT</td>
+              <td className="border px-3 py-2">Unique emotion name</td>
+            </tr>
           </tbody>
         </table>
       </div>
-    
 
       <h4 className="text-xl font-semibold mb-3 mt-8">ImageEmotion</h4>
-      <p className="mb-2 text-gray-800">Join table linking images to emotions (many-to-many).</p>
+      <p className="mb-2 text-gray-800">
+        Join table linking images to emotions (many-to-many).
+      </p>
       <div className="overflow-x-auto mb-6">
         <table className="w-full border border-gray-300 text-sm">
           <thead className="bg-gray-100 text-left">
@@ -639,37 +765,140 @@ export default function PhotoAlbumPage() {
             </tr>
           </thead>
           <tbody>
-                      <tr>
-            <td className="border px-3 py-2">image_id</td>
-            <td className="border px-3 py-2">INTEGER</td>
-            <td className="border px-3 py-2">Foreign key to `ImageMetadata.id`</td>
-          </tr>
-          <tr>
-            <td className="border px-3 py-2">emotion_id</td>
-            <td className="border px-3 py-2">INTEGER</td>
-            <td className="border px-3 py-2">Foreign key to `EmotionTag.id`</td>
-          </tr>
-          <tr>
-            <td className="border px-3 py-2"></td>
-            <td className="border px-3 py-2"></td>
-            <td className="border px-3 py-2">Composite primary key (`image_id`, `emotion_id`)</td>
-          </tr>
+            <tr>
+              <td className="border px-3 py-2">image_id</td>
+              <td className="border px-3 py-2">INTEGER</td>
+              <td className="border px-3 py-2">
+                Foreign key to `ImageMetadata.id`
+              </td>
+            </tr>
+            <tr>
+              <td className="border px-3 py-2">emotion_id</td>
+              <td className="border px-3 py-2">INTEGER</td>
+              <td className="border px-3 py-2">
+                Foreign key to `EmotionTag.id`
+              </td>
+            </tr>
+            <tr>
+              <td className="border px-3 py-2"></td>
+              <td className="border px-3 py-2"></td>
+              <td className="border px-3 py-2">
+                Composite primary key (`image_id`, `emotion_id`)
+              </td>
+            </tr>
           </tbody>
         </table>
       </div>
 
-      <h3 className="text-2xl font-semibold mb-3 mt-8">Future Work / Known Limitations</h3>
+      <h4 className="text-xl font-semibold mb-3 mt-8">Location</h4>
+      <p className="mb-2 text-gray-800">
+        Stores structured location data that can be associated with images.
+      </p>
+      <div className="overflow-x-auto mb-6">
+        <table className="w-full border border-gray-300 text-sm">
+          <thead className="bg-gray-100 text-left">
+            <tr>
+              <th className="border px-3 py-2">Column</th>
+              <th className="border px-3 py-2">Type</th>
+              <th className="border px-3 py-2">Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td className="border px-3 py-2">id</td>
+              <td className="border px-3 py-2">INTEGER</td>
+              <td className="border px-3 py-2">Primary key</td>
+            </tr>
+            <tr>
+              <td className="border px-3 py-2">name</td>
+              <td className="border px-3 py-2">TEXT</td>
+              <td className="border px-3 py-2">
+                Name of the location (e.g., "Hyde Park")
+              </td>
+            </tr>
+            <tr>
+              <td className="border px-3 py-2">category</td>
+              <td className="border px-3 py-2">TEXT</td>
+              <td className="border px-3 py-2">
+                Optional category (e.g., "Park", "Museum")
+              </td>
+            </tr>
+            <tr>
+              <td className="border px-3 py-2">country</td>
+              <td className="border px-3 py-2">TEXT</td>
+              <td className="border px-3 py-2">
+                Country where the picture was taken
+              </td>
+            </tr>
+            <tr>
+              <td className="border px-3 py-2">region</td>
+              <td className="border px-3 py-2">TEXT</td>
+              <td className="border px-3 py-2">Regional subdivision</td>
+            </tr>
+            <tr>
+              <td className="border px-3 py-2">city</td>
+              <td className="border px-3 py-2">TEXT</td>
+              <td className="border px-3 py-2">City name</td>
+            </tr>
+            <tr>
+              <td className="border px-3 py-2">postcode</td>
+              <td className="border px-3 py-2">TEXT</td>
+              <td className="border px-3 py-2">Postal code of the location</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
       <p className="mb-4 text-gray-800">
-        While the application meets its core goals, there are a few limitations in the current version and opportunities for future enhancements:
+        This table is referenced by the <code>ImageMetadata</code> table via the{" "}
+        <code>location_id</code> foreign key, allowing each image to be
+        optionally linked to a structured location entry. This enables
+        location-based filtering (e.g., all photos taken in "London" or in
+        "Museums").
+      </p>
+
+      <h3 className="text-2xl font-semibold mb-3 mt-8">
+        Future Work / Known Limitations
+      </h3>
+      <p className="mb-4 text-gray-800">
+        While the application meets its core goals, there are a few limitations
+        in the current version and opportunities for future enhancements:
       </p>
       <ul className="mb-4 pl-5 list-disc marker:text-gray-500 space-y-1 pl-6">
-        <li><strong>Video Format Support</strong>: At present, the application is designed to work with image files only. Support for video files—such as tagging, thumbnail previews, and filtering—could be added in future versions to allow users to organise all their visual media in one place.</li>
-        <li><strong>AI Tagging</strong>: All tagging is currently manual. In future updates, computer vision techniques could be integrated to suggest tags automatically based on image content, such as recognising faces, scenes, or objects. This would significantly speed up the tagging process and help surface relevant metadata for older, forgotten images.</li>
-        <li><strong>Undo Operations</strong>: There is currently no undo functionality for deletions, tag edits, or batch operations. Introducing an undo/redo system would help prevent accidental data loss and give users more confidence when performing bulk edits or deletions.</li>
-        <li><strong>File Renaming</strong>: At present, the application does not support renaming image files. Providing the option to rename files—either manually or based on metadata—could improve consistency and make exported or shared files more meaningful.</li>
+        <li>
+          <strong>Video Format Support</strong>: At present, the application is
+          designed to work with image files only. Support for video files—such
+          as tagging, thumbnail previews, and filtering—could be added in future
+          versions to allow users to organise all their visual media in one
+          place.
+        </li>
+        <li>
+          <strong>AI Tagging</strong>: All tagging is currently manual. In
+          future updates, computer vision techniques could be integrated to
+          suggest tags automatically based on image content, such as recognising
+          faces, scenes, or objects. This would significantly speed up the
+          tagging process and help surface relevant metadata for older,
+          forgotten images.
+        </li>
+        <li>
+          <strong>Undo Operations</strong>: There is currently no undo
+          functionality for deletions, tag edits, or batch operations.
+          Introducing an undo/redo system would help prevent accidental data
+          loss and give users more confidence when performing bulk edits or
+          deletions.
+        </li>
+        <li>
+          <strong>File Renaming</strong>: At present, the application does not
+          support renaming image files. Providing the option to rename
+          files—either manually or based on metadata—could improve consistency
+          and make exported or shared files more meaningful.
+        </li>
       </ul>
       <p className="mb-4 text-gray-800">
-        These limitations were consciously accepted in order to keep the initial system lightweight, focused, and easy to maintain. However, addressing them in future iterations could improve usability and extend the system's capabilities without compromising its core values of simplicity and privacy.
+        These limitations were consciously accepted in order to keep the initial
+        system lightweight, focused, and easy to maintain. However, addressing
+        them in future iterations could improve usability and extend the
+        system's capabilities without compromising its core values of simplicity
+        and privacy.
       </p>
     </div>
   );
