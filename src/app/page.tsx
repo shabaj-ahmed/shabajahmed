@@ -5,7 +5,7 @@ export default function HomePage() {
       <section className="p-6 bg-white rounded-md shadow-md">
         <h1 className="text-2xl font-bold mb-4">🌱 About Me</h1>
         <p>
-         I&apos;m a robotics researcher with a deep curiosity for how we can use machines to solve meaningful human problems, especially in the areas of health and wellbeing. My journey has taken me through automotive engineering, tech startups, and academia, but the common thread is always the same: using technology to improve people&apos;s lives.
+         I&apos;m a robotics researcher with a curiosity for how we can use machines to solve meaningful human problems, especially in the areas of health and wellbeing. My journey has taken me through automotive engineering, tech startups, and academia, but the common thread is always the same: using technology to improve people&apos;s lives.
         </p>
         <p className="mt-4">
          I approach problems from a human-centered perspective. Whether I&apos;m developing embedded systems or designing user-focused robotic interactions, I believe in using the right tools for the job and learning new ones when needed. I bring a cross-disciplinary mindset that helps me connect ideas across domains and see patterns others might miss.
@@ -15,16 +15,16 @@ export default function HomePage() {
       <section className="p-6 bg-white rounded-md shadow-md">
         <h1 className="text-2xl font-bold mb-4">⚙️ Current Work and Interests</h1>
           <p>
-            <strong>PhD candidate (Preparing for Viva):</strong> My PhD research focuses on human-robot interaction, exploring how socially assistive robotics can support healthy habit formation. I design and evaluate robot-led interventions that encourage behaviour change, drawing from behavior science, robotics, and health technology.
+            <strong>PhD candidate:</strong> My PhD research focuses on human-robot interaction, exploring how socially assistive robotics can support healthy habit formation. I design and evaluate robot-led interventions that encourage behaviour change, drawing from behavior science, robotics, and health technology.
           </p>
       </section>
 
       <section className="p-6 bg-white rounded-md shadow-md">
         <h1 className="text-2xl font-bold mb-4">🛠 Skills and Expertise</h1>
         <ul className="list-disc list-inside space-y-2">
-          <li><strong>Programming Languages:</strong> Python, C/C++, Dart, JavaScript, MATLAB, HTML, CSS, SQL, R</li>
-          <li><strong>Frameworks & Tools:</strong> Flutter, Firebase, MQTT, Node.js, Git, SourceTree, ROS RTOS, PyTorch, TensorFlow, OpenCV</li>
-          <li><strong>Embedded & Hardware:</strong> LabVIEW, microcontrollers, microprocessors, IoT, sensor integration</li>
+          <li><strong>Programming Languages:</strong> Python, C/C++, Dart, SQL, R</li>
+          <li><strong>Frameworks & Tools:</strong> Flutter, Firebase, MQTT, Git, ROS, FreeRTOS, PyTorch</li>
+          <li><strong>Embedded & Hardware:</strong> microcontrollers, microprocessors, IoT, sensor integration</li>
           <li><strong>System Design & Engineering:</strong> Model-Based Systems Engineering (MBSE), SysML, IBM Rhapsody, DOORS</li>
           <li><strong>Design & Prototyping:</strong> CAD (SolidWorks/Fusion 360), 3D Printing</li>
         </ul>
