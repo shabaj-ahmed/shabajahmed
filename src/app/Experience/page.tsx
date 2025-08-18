@@ -42,7 +42,7 @@ export default function Page() {
         <h1 className="text-3xl font-bold mb-4">📚 Education</h1>
 
         <h2 className="text-xl font-bold ml-4">PhD in Human-Robot Interaction</h2>
-        <p className="italic">University of Bristol &#8211; Ongoing</p>
+        <p className="italic">University of Bristol &#8211; Awarded 2025</p>
         <p className="mt-2">
           My doctoral research focuses on how socially assistive robots can influence human behaviour, with a particular emphasis on promoting long-term healthy habits. I design and conduct empirical studies using both qualitative and quantitative methods, including statistical analysis. A key focus of my work is developing interactive robotic systems that support users through habit formation, using Python-based systems and decision trees to enable personalised dialogue and behaviour tracking.
         </p>
