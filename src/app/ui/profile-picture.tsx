@@ -20,9 +20,9 @@ export default function ProfilePicture() {
         <p className={`${lusitana.className} text-purple-200 text-lg md:text-xl`}>
           Mohammed Shabaj Ahmed
         </p>
-        {/* <p className="text-indigo-300 text-sm md:text-base italic text-gray-200">
-          Professional Problem Solver
-        </p> */}
+        <p className="text-indigo-300 text-sm md:text-base italic text-gray-200">
+          Embedded Software Engineer
+        </p>
       </div>
     </div>
   );
